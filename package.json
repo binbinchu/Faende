@@ -1,0 +1,44 @@
+{
+  "name": "finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack -d --progress --colors --watch --config webpackConf/webpack.dev.js",
+    "dev": "webpack-dev-server --hot --inline  --watch  --config webpackConf/webpack.dev.js",
+    "build": "webpack  -p  --progress --colors --config webpackConf/webpack.prod.js & node prod.server.js"
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "jquery": "^3.2.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "swiper": "^4.2.6"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.30",
+    "babel-loader": "^5.3.2",
+    "browser-sync": "^2.11.2",
+    "browser-sync-webpack-plugin": "^1.0.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.21.0",
+    "ejs": "^2.5.9",
+    "express": "^4.16.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^0.8.4",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.7.2",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
+    "style-loader": "^0.13.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "url-loader": "^0.5.6",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,116 @@
+@import "./all";
+
+//Header
+.Header{
+  z-index:99;
+  height: 80px;
+  border-bottom: 1px inset #979797;
+  position: fixed;
+}
+.HeaderBox{
+  //width: 95%;
+  margin:0 auto;
+}
+.Logo{display: inline-block;
+  line-height: 80px;
+  margin-left:341px;
+}
+.Logo img{
+  /*display: table-cell;*/
+  vertical-align: middle;
+  height: 30px;
+  width: 128px;
+}
+.headNavList{
+  float: right;
+  display: inline-table;
+  width: 678px;
+}
+.headNavLi{
+  line-height: 80px;
+  display: inline-block;
+  padding:0 12px 0 12px;
+  //position: relative;
+  text-align: center;
+}
+.headNavLi:hover .dropDwon{
+  display: block !important;
+}
+.dropDwon{
+  display: none;
+  position: absolute;
+  background: black;
+}
+.dropDownLi{
+  padding:0 15px 0 15px;
+  color:white;
+  line-height: 30px;
+}
+.headNavLi a{
+  display: inline-block;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+}
+//Footer
+.footerTop{
+  background: #3D3D3D;
+}
+.footerBottom{
+  background: #898989;
+}
+.footerTopMen{
+  width: 1200px;
+  height: 288px;
+  margin:0 auto;
+}
+/* two items */
+.footerTopMen li:first-child:nth-last-child(2),
+.footerTopMen li:first-child:nth-last-child(2) ~ li {
+  padding:70px 0 0 0;
+  float: left;
+  width: 50%;
+}
+/* three items */
+.footerTopMen li:first-child:nth-last-child(3),
+.footerTopMen li:first-child:nth-last-child(3) ~ li {
+  padding:70px 0 0 0;
+  float: left;
+  width: 33.3333%;
+}
+/* four items */
+.footerTopMen li:first-child:nth-last-child(4),
+.footerTopMen li:first-child:nth-last-child(4) ~ li {
+  padding:70px 0 0 0;
+  float: left;
+  width: 25%;
+}
+
+
+.footerImg{
+  color:rgba(255,255,255,0.5);
+  text-align: center;
+}
+.footerImg>i{
+  font-size:36px;
+}
+.footerImg img{
+  height: 38px;
+  width: 38px;
+}
+.footerCon{
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top:24px;
+}
+.footerBottomCon{
+  margin:0 auto;
+  width: 513px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+}

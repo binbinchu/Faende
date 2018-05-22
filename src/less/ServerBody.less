@@ -1,0 +1,195 @@
+@import "all";
+@import "ProductBody";
+
+.serverMenuTitle{
+  margin-top:23px;
+  font-family: PingFangSC-Medium;
+  font-size: 36px;
+  color: #333333;
+  text-align: center;
+  padding-bottom:44px;
+  border-bottom:1px solid rgba(151,151,151,0.4);
+}
+.serverMenuList{
+  margin-top:50px;
+  overflow: hidden;
+}
+.serverMenuListLi:nth-child(2n+1){
+  float: left;
+}
+.serverMenuListLi:nth-child(2n){
+  float: right;
+}
+.serverMenuListLi{
+  width: 530px;
+  height: 369px;
+  border: 1px solid #979797;
+  margin-bottom:50px;
+}
+.serverMenuLiImg img{
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  width: 530px;
+  height: 256px;
+}
+.serverMenuListLi:hover .serverMenuLiImg img{
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+.serverMenuListLi:hover{
+  border: 1px solid rgba(196,0,0,0.9);
+}
+.serverMenuListLi:hover .serverMenuLiIntro{
+  color:#C47070;
+}
+.serverMenuLiIntro{
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #999999;
+  text-align: center;
+  margin-top:50px;
+  height: 42px;
+  overflow: hidden;
+}
+
+//或作伙伴
+.partnerMenuListLi{
+  position: relative;
+}
+.partnerMenuListLi:hover .partnerTitle{
+  color: #C40000;
+}
+.partnerMenuListLi:hover .partnerTitleBox{
+  border-bottom: 1px solid rgba(196,0,0,0.9);
+}
+.partnerMenuListLi:hover .partnerIntro{
+  color: #C47070;
+}
+.partnerMenuListLi:hover .partnerTag span{
+  color: #C40000;
+}
+.partnerTitleBox{
+  padding-top:45px;
+  border-bottom: 1px solid #999999;
+}
+.partnerTitle{
+  width: 145px;
+  height: 50px;
+  margin: 0 auto;
+  padding-bottom:14px;
+  font-family: PingFangSC-Medium;
+  font-size: 36px;
+  color: #999999;
+}
+.partnerIntro{
+  width: 455px;
+  max-height: 88px;
+  margin:0 auto;
+  padding-top:14px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #999999 ;
+}
+.partnerTag{
+  position: absolute;
+  top:258px;
+  left:124px;
+  width: 288px;
+  height: 22px;
+}
+.partnerTag span{
+  display: inline-block;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #999999;
+  width: 33.33%;
+}
+.partnerTag span:nth-child(1){
+  text-align: left;
+}
+.partnerTag span:nth-child(2){
+  text-align: center;
+}
+.partnerTag span:nth-child(3){
+  text-align: right;
+}
+
+.opinionBox{
+  overflow: hidden;
+  margin-bottom:123px;
+}
+.opinionLeftBox{
+  float: left;
+  width: 351px;
+}
+.opinionTitle{
+  font-family: PingFangSC-Medium;
+  font-size: 36px;
+  color: #666666;
+  text-align: center;
+  margin-bottom:38px;
+}
+.opinionFoot{
+  font-family: PingFangSC-Medium;
+  font-size: 24px;
+  color: #333333;
+  margin:50px 0 50px 0;
+}
+
+.opinionLeftTitle{
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  color: #999999;
+}
+.opinionRightBox{
+  float: right;
+}
+input,textarea{
+  border: 1px solid #F0F0F0;
+  outline: none;
+}
+.Input{
+  height: 60px;
+  font-size: 20px;
+  line-height: 70px;
+  background: white;
+  text-align: left;
+  padding:0 0 0 15px;
+}
+.opinionInput{
+  width: 380px;
+}
+.opinionInput:nth-child(2){
+  margin-left:36px;
+}
+.opinionTitle{
+  margin-top:30px;
+}
+.opinionTitleIn{
+  margin-top:30px;
+  width: 797px;
+  margin-bottom:38px;
+}
+.opinionCon{
+  min-width: 797px;
+  min-height: 265px;
+  max-width: 797px;
+  max-height: 265px;
+}
+.opinionBtn{
+  display: block;
+  font-family: PingFangSC-Medium;
+  font-size: 27px;
+  color: #FFFFFF;
+  width: 342px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  background: #C40000;
+  margin-top:42px;
+  cursor: pointer;
+}
