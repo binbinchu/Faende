@@ -21,7 +21,6 @@ class NewsMenu extends React.Component{
                 type:this.state.type
             },
             success:function(data){
-                console.log(data)
                 _this.setState({
                     menuList:data.data
                 })

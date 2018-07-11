@@ -31,19 +31,19 @@ export default class NewsList extends React.Component{
             }
         })
     }
-    // componentWillReceiveProps(nextProps){
-    //     let nextPropsId = nextProps.location.state.listId,
-    //         oldPropsId = this.props.location.state.listId,
-    //         nextPropsType = nextProps.location.state.type,
-    //         oldPropsType = this.props.location.state.type
-    //     if(nextPropsId != oldPropsId || nextPropsType != oldPropsType){
-    //         this.loadNewsList(nextPropsType,nextPropsId)
-    //         this.setState({
-    //             type:nextPropsType,
-    //             name:nextProps.location.state.name
-    //         })
-    //     }
-    // }
+    componentWillReceiveProps(nextProps){
+        let nextPropsId = nextProps.match.params.id || nextProps.location.state.listId,
+            oldPropsId = this.props.match.params.id || this.props.location.state.listId;
+            // nextPropsType = nextProps.match.params.type || nextProps.location.state.type,
+            // oldPropsType = this.props.match.params.type || this.props.location.state.type
+        if(nextPropsId != oldPropsId){
+            this.loadNewsList("news",nextPropsId)
+            this.setState({
+                type:"news",
+                name:nextProps.location.state.name || nextProps.match.params.name
+            })
+        }
+    }
     componentDidMount(){
         let type = this.state.type,
             id = this.state.listId;
@@ -83,7 +83,7 @@ export default class NewsList extends React.Component{
                             {/*<span className="TagName">标签：  </span><span className="Tags">公司、天气</span>*/}
                         </div>
                         <div className="newsListTagTime">
-                            {item.addtime}
+                            {item.addtime.substring(0,10)}
                         </div>
                     </div>
                     <div className="newsListBtn">了解详情</div>

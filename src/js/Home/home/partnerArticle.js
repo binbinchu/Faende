@@ -50,7 +50,7 @@ export default class PartnerArticle extends React.Component {
             url: APIURL+"CooperationmainGetInfo",
             dataType: "JSON",
             data: {
-                type: type,
+                type: type
             },
             success: function (data) {
                 if (type == "alliance") {

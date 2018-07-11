@@ -21,7 +21,7 @@ export default class IndexBody extends React.Component{
             dataType:"JSON",
             success:function(data){
                 _this.setState({
-                    IndexNewsData: data.data,
+                    IndexNewsData: data.data
                 });
             }
         })
@@ -34,7 +34,7 @@ export default class IndexBody extends React.Component{
             dataType:"JSON",
             success:function(data){
                 _this.setState({
-                    IndexProductData: data.data,
+                    IndexProductData: data.data
                 });
             }
         })

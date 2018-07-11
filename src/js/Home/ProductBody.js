@@ -1,22 +1,23 @@
 import $ from 'jquery'
 import React from 'react'
-import { BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom'
-import {ProductLeftMenu,ProductRightMenu} from './home/product';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {ProductLeftMenu, ProductRightMenu} from './home/product';
 
 //组件
 
 
 //样式
- import '../../less/ProductBody.less'
+import '../../less/ProductBody.less'
 
 
-export default class ProductBody extends React.Component{
-     constructor(props){
-         super(props);
-     }
-    render(){
-         let showid = this.props.location.search.split("=")[1] || this.props.location.state.listId
-        return(
+export default class ProductBody extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let showid = this.props.location.search.split("=")[1] || this.props.location.state.listId
+        return (
             <div className="allwidth">
                 <div className="ProductWrapper">
                     <div className="ProductTop_Head"></div>

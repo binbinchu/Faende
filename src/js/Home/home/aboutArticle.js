@@ -11,7 +11,6 @@ export default class AboutArticle extends React.Component {
     constructor(props) {
         super(props);
         if (this.props.location.state || this.props.match) {
-            console.log(this.props)
             this.state = {
                 type: this.props.match.params.type || this.props.location.state.type || this.props.location.state.url.substring(17),
                 article: [],
@@ -19,7 +18,6 @@ export default class AboutArticle extends React.Component {
             }
         } else {
             let type = window.location.search
-            console.log(type)
         }
     }
 
@@ -51,7 +49,7 @@ export default class AboutArticle extends React.Component {
             url: APIURL+"aboutUsGetInfo",
             dataType: "JSON",
             data: {
-                type: type,
+                type: type
             },
             success: function (data) {
                 if(type == "introduce"){

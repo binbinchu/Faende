@@ -1,7 +1,7 @@
 //process.noDeprecation = true;
 var path = require('path');
 var webpack = require('webpack');
-
+var es3ifyPlugin = require('es3ify-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
@@ -51,19 +51,7 @@ const webpackConfig = {
         }, {
             test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: 'file-loader'
-        },
-            //     {
-            //     test: /\.(png|jpg|gif|svg)$/,
-            //         exclude: /node_modules/,
-            //         use: [{
-            //             loader: 'url-loader',
-            //             options:{
-            //                 limit:8192,
-            //                 name: 'images/[name]-[hash].[ext]',
-            //             }
-            //         }]
-            // },
-            {
+        },{
                 test: /\.(png|jpg|gif|svg)$/,
                 exclude: /node_modules/,
                 use: [{
@@ -86,7 +74,7 @@ const webpackConfig = {
             'jQuery': 'jquery',
             '$': 'jquery',
         }),
-
+        new es3ifyPlugin()
 
     ]
 };

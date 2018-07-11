@@ -75,13 +75,17 @@ const prodWebpackConf = merge(baseWebpackConf, {
         new webpack.optimize.UglifyJsPlugin({
             beautify: true,
             comments: false,
-            sourceMap:true,
+            quote_keys:true,
             compress: {
                 warnings: false,
                 drop_console: true,
                 collapse_vars: true,
                 reduce_vars: true,
-            }
+            },
+            mangle: {
+                screw_ie8: false
+            },
+            sourceMap:true
         }),
         new ExtractTextPlugin("css/[name].[contenthash:8].css"),
     ]

@@ -11,7 +11,6 @@ import '../../../less/newsArticle.less'
 export default class NewsArticle extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props)
         if (this.props.location.state || this.props.match.params.type) {
             this.state = {
                 type:this.props.match.params.type || this.props.location.state.type || this.props.location.state.url.substring(18),
@@ -26,7 +25,6 @@ export default class NewsArticle extends React.Component {
             }
         } else {
             let type = window.location.search
-            console.log(type)
         }
     }
 
@@ -44,7 +42,11 @@ export default class NewsArticle extends React.Component {
             if(nextPropsType == ""){
                 this.loadArticle("promise");
             }else{
-                this.loadArticle(nextPropsType);
+                console.log(nextPropsType)
+                if(nextPropsType != "意见建议"){
+                    this.loadArticle(nextPropsType);
+                }
+
             }
         }
     }
@@ -57,12 +59,13 @@ export default class NewsArticle extends React.Component {
         }else if(type == "服务承诺"){
             type = "promise"
         }
+        console.log(type)
         $.ajax({
             type: "get",
             url: APIURL+"CustomerGetInfo",
             dataType: "JSON",
             data: {
-                type: type,
+                type: type
             },
             success: function (data) {
                 if (type == "preSale") {
@@ -70,6 +73,8 @@ export default class NewsArticle extends React.Component {
                 } else if (type == "afterSale") {
                     data.data.name = "售后服务"
                 } else if (type == "promise") {
+                    data.data.name = "服务承诺"
+                }else if(data.data == undefined){
                     data.data.name = "服务承诺"
                 }
                 _this.setState({
@@ -86,7 +91,7 @@ export default class NewsArticle extends React.Component {
             url:APIURL+"mainGetContact",
             dataType:"JSON",
             success:function(data){
-                var datas = data.data
+                var datas = data.data;
                 _this.setState({
                     FooterData: datas,
                 });
@@ -107,23 +112,27 @@ export default class NewsArticle extends React.Component {
         history.back();
     }
     InputChange(e){
-        const target = e.target;
-        const value = target.value;
-        const name = target.name;
+        let target = e.target;
+        let value = target.value;
+        let name = target.name;
         this.setState({
             [name]:value
         })
 
     }
+    inputFocus(e){
+        var _this = e.currentTarget;
+        _this.focus()
+    }
     onSubmitPost(){
         let _this = this;
         let reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
         let reg2 = /^[\u4E00-\u9FA5A-Za-z]+$/;
-        const name = this.state.userName;
-        const email = this.state.mail;
-        const title = this.state.title;
-        const content = this.state.content;
-        const addtime = this.state.addtime;
+        let name = this.state.userName;
+        let email = this.state.mail;
+        let title = this.state.title;
+        let content = this.state.content;
+        let addtime = this.state.addtime;
         if(this.state.userName == ""){
             alert("用户名不能为空")
         }else if(this.state.mail == ""){
@@ -146,7 +155,7 @@ export default class NewsArticle extends React.Component {
                     email:email,
                     title:title,
                     content:content,
-                    addtime:addtime,
+                    addtime:addtime
                 },
                 success:function(data){
                     if(data.errno == "0"){
@@ -197,12 +206,12 @@ export default class NewsArticle extends React.Component {
                                 </div>
                                 <div className="opinionRightBox">
                                     <form>
-                                        <input type="text" placeholder="姓名" name="userName" value={this.state.userName} className="Input opinionInput" minLength="2" maxLength="10" onChange={this.InputChange.bind(this)}/>
-                                        <input type="email" placeholder="邮箱" name="mail" value={this.state.mail} className="Input opinionInput" onChange={this.InputChange.bind(this)}/>
+                                        <input type="text" placeholder="姓名" name="userName" defaultValue={this.state.userName} className="Input opinionInput" minLength="2" maxLength="10" onChange={this.InputChange.bind(this)} onFocus={this.inputFocus.bind(this)}/>
+                                        <input type="email" placeholder="邮箱" name="mail" defaultValue={this.state.mail} className="Input opinionInput" onChange={this.InputChange.bind(this)} onFocus={this.inputFocus.bind(this)}/>
                                         <br/>
-                                        <input type="text" placeholder="标题" name="title" value={this.state.title} className="Input opinionTitleIn" minLength="5" maxLength="30" onChange={this.InputChange.bind(this)}/>
+                                        <input type="text" placeholder="标题" name="title" defaultValue={this.state.title} className="Input opinionTitleIn" minLength="5" maxLength="30" onChange={this.InputChange.bind(this)} onFocus={this.inputFocus.bind(this)}/>
                                         <br/>
-                                        <textarea type="text" placeholder="内容" name="content" value={this.state.content} className="opinionCon"  maxLength="200" onChange={this.InputChange.bind(this)}/>
+                                        <textarea type="text" placeholder="内容" name="content" defaultValue={this.state.content} className="opinionCon"  maxLength="200" onChange={this.InputChange.bind(this)} onFocus={this.inputFocus.bind(this)}/>
                                         <div className="opinionBtn" value=""  onClick={this.onSubmitPost.bind(this)}>提交建议</div>
                                     </form>
                                 </div>

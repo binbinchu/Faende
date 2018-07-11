@@ -23,7 +23,7 @@ class ResolveLeftMenu extends React.Component{
             success:function(data){
                 var datas = data.data
                 _this.setState({
-                    listData: datas,
+                    listData: datas
                 });
             }
         })
@@ -48,7 +48,7 @@ class ResolveLeftMenu extends React.Component{
     componentDidMount(){
         let id = this.state.showid;
         this.loadLeftList();
-        this.showLeft(id)
+        this.showLeft(id);
     }
     render(){
         let _leftMenu = this.state.listData;

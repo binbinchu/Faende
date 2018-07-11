@@ -6,16 +6,31 @@ import {APIURL,IMG} from '../api'
 export default class ArticleList extends React.Component{
     constructor(props){
         super(props);
-        // console.log(this.props.location.search.split("=")[1][0]);
+        // console.log(this.props.location.search.split("id=")[1].split('&')[0]);
+        // console.log(this.props.location.query.listId);
         // console.log(this.props.location.search.split("type=")[1]);
         this.state = {
-            listId: this.props.location.search.split("=")[1][0] || this.props.location.state.listId,
+            listId: this.props.location.search.split("id=")[1].split('&')[0] || this.props.location.state.listId,
             type: this.props.location.search.split("type=")[1] || this.props.location.state.type,
             listData:[]
         }
     }
+
+    componentWillReceiveProps(nextProps){
+        const nextPropsId = nextProps.location.search.split("=")[1].split("&")[0] || nextProps.location.state.listId,
+            oldPropsId = this.props.location.search.split("=")[1].split("&")[0] ||this.props.location.state.listId,
+            nextPropsType = nextProps.location.search.split("type=")[1] || nextProps.location.state.type,
+            oldPropsType = this.props.location.search.split("type=")[1] || this.props.location.state.type;
+        if(nextPropsId != oldPropsId){
+            this.loadRightList(nextPropsType,nextPropsId)
+            this.setState({
+                type:nextPropsType
+            })
+        }
+    }
     loadRightList(type,listId){
         let _this = this;
+        console.log(listId);
         $.ajax({
             type:"get",
             url:APIURL+"getNewsListByCateId",
@@ -31,19 +46,6 @@ export default class ArticleList extends React.Component{
             }
         })
     }
-    componentWillReceiveProps(nextProps){
-        let nextPropsId = nextProps.location.search.split("=")[1][0] || nextProps.location.state.listId,
-            oldPropsId = this.props.location.search.split("=")[1][0] ||this.props.location.state.listId,
-            nextPropsType = nextProps.location.search.split("type=")[1] || nextProps.location.state.type,
-            oldPropsType = this.props.location.search.split("type=")[1] || this.props.location.state.type
-        if(nextPropsId != oldPropsId || nextPropsType != oldPropsType){
-            this.loadRightList(nextPropsType,nextPropsId)
-            this.setState({
-                type:nextPropsType
-            })
-        }
-    }
-
     componentDidMount(){
         let listId = this.state.listId;
         let type = this.state.type;
