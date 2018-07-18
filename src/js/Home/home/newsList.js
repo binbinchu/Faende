@@ -83,7 +83,8 @@ export default class NewsList extends React.Component{
                             {/*<span className="TagName">标签：  </span><span className="Tags">公司、天气</span>*/}
                         </div>
                         <div className="newsListTagTime">
-                            {item.addtime.substring(0,10)}
+                            {/*{item.addtime.substring(0,10)}*/}
+                            {item.addtime}
                         </div>
                     </div>
                     <div className="newsListBtn">了解详情</div>
@@ -102,78 +103,6 @@ export default class NewsList extends React.Component{
                     </div>
                     <div className="newsList">
                         {ListData}
-                        {/*<li className="newsListLi">*/}
-                            {/*<div className="newsListImgBox"><img /></div>*/}
-                            {/*<div className="newsListInfo">*/}
-                                {/*<div className="newsListTitle">*/}
-                                    {/*Upgrading To Microsoft Windows Vista*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListIntro">*/}
-                                    {/*Lorem Ipsum is simply dummy text of the*/}
-                                    {/*printing and typesetting industry. Lorem*/}
-                                    {/*Ipsum has been the industry's standard dummy*/}
-                                    {/*text ever since the 1500s, wh en an unknown*/}
-                                    {/*printer took a galley of type and scrambled*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListTagBox">*/}
-                                    {/*<div className="newsListTag">*/}
-                                        {/*<span className="TagName">标签：  </span><span className="Tags">公司、天气</span>*/}
-                                    {/*</div>*/}
-                                    {/*<div className="newsListTagTime">*/}
-                                        {/*2018/04/13*/}
-                                    {/*</div>*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListBtn">了解详情</div>*/}
-                            {/*</div>*/}
-                        {/*</li>*/}
-                        {/*<li className="newsListLi">*/}
-                            {/*<div className="newsListImgBox"><img /></div>*/}
-                            {/*<div className="newsListInfo">*/}
-                                {/*<div className="newsListTitle">*/}
-                                    {/*Upgrading To Microsoft Windows Vista*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListIntro">*/}
-                                    {/*Lorem Ipsum is simply dummy text of the*/}
-                                    {/*printing and typesetting industry. Lorem*/}
-                                    {/*Ipsum has been the industry's standard dummy*/}
-                                    {/*text ever since the 1500s, wh en an unknown*/}
-                                    {/*printer took a galley of type and scrambled*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListTagBox">*/}
-                                    {/*<div className="newsListTag">*/}
-                                        {/*<span className="TagName">标签：  </span><span className="Tags">公司、天气</span>*/}
-                                    {/*</div>*/}
-                                    {/*<div className="newsListTagTime">*/}
-                                        {/*2018/04/13*/}
-                                    {/*</div>*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListBtn">了解详情</div>*/}
-                            {/*</div>*/}
-                        {/*</li>*/}
-                        {/*<li className="newsListLi">*/}
-                            {/*<div className="newsListImgBox"><img /></div>*/}
-                            {/*<div className="newsListInfo">*/}
-                                {/*<div className="newsListTitle">*/}
-                                    {/*Upgrading To Microsoft Windows Vista*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListIntro">*/}
-                                    {/*Lorem Ipsum is simply dummy text of the*/}
-                                    {/*printing and typesetting industry. Lorem*/}
-                                    {/*Ipsum has been the industry's standard dummy*/}
-                                    {/*text ever since the 1500s, wh en an unknown*/}
-                                    {/*printer took a galley of type and scrambled*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListTagBox">*/}
-                                    {/*<div className="newsListTag">*/}
-                                        {/*<span className="TagName">标签：  </span><span className="Tags">公司、天气</span>*/}
-                                    {/*</div>*/}
-                                    {/*<div className="newsListTagTime">*/}
-                                        {/*2018/04/13*/}
-                                    {/*</div>*/}
-                                {/*</div>*/}
-                                {/*<div className="newsListBtn">了解详情</div>*/}
-                            {/*</div>*/}
-                        {/*</li>*/}
                     </div>
                 </div>
             </div>

@@ -169,33 +169,6 @@ export default class Index extends React.Component {
                             <div className="headNavList">
                                 <ul>
                                     {HeadMenu}
-                                    {/*<li className="headNavLi"><Link to="/">首页</Link></li>*/}
-                                    {/*<li className="headNavLi">*/}
-                                    {/*<Link to="/news">新闻中心</Link>*/}
-                                    {/*<div className="dropDwon">*/}
-                                    {/*<ul>*/}
-                                    {/*<li className="dropDownLi">菜单菜单菜单</li>*/}
-                                    {/*<li className="dropDownLi">菜单菜单菜单</li>*/}
-                                    {/*<li className="dropDownLi">菜单菜单菜单</li>*/}
-                                    {/*<li className="dropDownLi">菜单菜单菜单</li>*/}
-                                    {/*</ul>*/}
-                                    {/*</div>*/}
-                                    {/*</li>*/}
-                                    {/*<li className="headNavLi">*/}
-                                    {/*<Link to="/product/list/1116">产品中心</Link>*/}
-                                    {/*<div className="dropDwon">*/}
-                                    {/*<ul>*/}
-                                    {/*<li className="dropDownLi">菜单菜单菜单</li>*/}
-                                    {/*<li className="dropDownLi">菜单菜单菜单</li>*/}
-                                    {/*<li className="dropDownLi">菜单菜单菜单</li>*/}
-                                    {/*<li className="dropDownLi">菜单菜单菜单</li>*/}
-                                    {/*</ul>*/}
-                                    {/*</div>*/}
-                                    {/*</li>*/}
-                                    {/*<li className="headNavLi"><Link to="/resolve/list/1116">解决方案</Link></li>*/}
-                                    {/*<li className="headNavLi"><Link to="/server">客户服务</Link></li>*/}
-                                    {/*<li className="headNavLi"><Link to="/partner">战略合作</Link></li>*/}
-                                    {/*<li className="headNavLi"><Link to="/about">关于我们</Link></li>*/}
                                 </ul>
                             </div>
                         </div>
@@ -208,7 +181,7 @@ export default class Index extends React.Component {
                             <Route path="/solution/list" component={ResolveBody}></Route>
                             <Route path="/server" component={ServerBody}></Route>
                             <Route path="/partner" component={PartnerBody}></Route>
-                            <Route path="/about" component={AboutBody}></Route>
+                            <Route path="/about" component={AboutBody} aboutData="asd"></Route>
 
                             <Route path="/newsArticle/:name/:pName/:type/:id" component={NewsArticle}></Route>
                             <Route path="/serverArticle/:type" component={ServerArticle}></Route>

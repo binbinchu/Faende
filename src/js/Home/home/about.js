@@ -4,14 +4,35 @@ import { BrowserRouter as Router,Switch,Route,Link} from 'react-router-dom'
 import {APIURL,IMG} from '../api'
 //Banner
 class Banner extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            aboutData:[]
+        }
+    }
+    loadAbout(){
+        let _this = this;
+        $.ajax({
+            type:"get",
+            url:APIURL+"getAboutUs",
+            dataType:"JSON",
+            success:function(data){
+                _this.setState({
+                    aboutData: data.data
+                });
+            }
+        })
+    }
+    componentDidMount(){
+        this.loadAbout();
+    }
     render(){
+        const aboutData = this.state.aboutData;
         return(
             <div className="aboutBanner">
                 <div className="aboutBannerTitle BannerLeft">关于我们</div>
                 <div className="aboutBannerIntro BannerLeft">
-                    济南法恩德信息技术有限公司,中国
-                    第一家枪支定位设备提供商。2008年1月创立于山东济南,致力于推动枪支管
-                    控、环境智能监测、车辆动态管理的信息化进程。
+                    {aboutData.text}
                 </div>
                 {/*<div className="aboutBannerBtn">Explore</div>*/}
             </div>
@@ -73,22 +94,6 @@ class AboutMenu extends React.Component{
                 <div className="aboutMenuBox">
                     <ul>
                         {ListData}
-                        {/*<li className="aboutMenuLi">*/}
-                            {/*<div className="aboutMenuLiImg"><img /></div>*/}
-                            {/*<div className="aboutMenuTitle">公司介绍</div>*/}
-                        {/*</li>*/}
-                        {/*<li className="aboutMenuLi">*/}
-                            {/*<div className="aboutMenuLiImg"><img /></div>*/}
-                            {/*<div className="aboutMenuTitle">公司文化</div>*/}
-                        {/*</li>*/}
-                        {/*<li className="aboutMenuLi">*/}
-                            {/*<div className="aboutMenuLiImg"><img /></div>*/}
-                            {/*<div className="aboutMenuTitle">资质荣誉</div>*/}
-                        {/*</li>*/}
-                        {/*<li className="aboutMenuLi">*/}
-                            {/*<div className="aboutMenuLiImg"><img /></div>*/}
-                            {/*<div className="aboutMenuTitle">联系我们</div>*/}
-                        {/*</li>*/}
                     </ul>
                 </div>
             </div>

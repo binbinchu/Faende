@@ -42,13 +42,13 @@ class ResolveLeftMenu extends React.Component{
         }
     }
     componentWillReceiveProps(nextProps){
-        const nextShowId = nextProps.showid;
-        this.showLeft(nextShowId);
+        const nextShowId = nextProps.showid.split("&")[0];
+        // this.showLeft(nextShowId);
     }
     componentDidMount(){
-        let id = this.state.showid;
+        let id = this.state.showid.split("&")[0];
         this.loadLeftList();
-        this.showLeft(id);
+        // this.showLeft(id);
     }
     render(){
         let _leftMenu = this.state.listData;

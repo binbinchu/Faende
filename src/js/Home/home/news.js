@@ -66,48 +66,6 @@ class NewsMenu extends React.Component{
                     <div className="newsMenuList">
                         <ul>
                             {MenuList}
-                            {/*<li className="newsMenuLi">*/}
-                                {/*<Link to="/newsList">*/}
-                                    {/*<div className="newsMenuImg"><img src={news1} /></div>*/}
-                                    {/*<div className="newsMenuTitleBox">*/}
-                                        {/*<div className="n_M_1"><div className="newsMenuTitle">公司新闻</div></div>*/}
-                                        {/*<div className="n_M_2">*/}
-                                            {/*<div className="newsMenuIntro">*/}
-                                                {/*公司大小事件*/}
-                                                {/*即时信息发布*/}
-                                            {/*</div>*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
-                                {/*</Link>*/}
-                            {/*</li>*/}
-                            {/*<li className="newsMenuLi">*/}
-                                {/*<Link to="/newsList">*/}
-                                    {/*<div className="newMenuImg"><img src={news2} /></div>*/}
-                                    {/*<div className="newsMenuTitleBox">*/}
-                                        {/*<div className="n_M_1"><div className="newsMenuTitle">行业新闻</div></div>*/}
-                                        {/*<div className="n_M_2">*/}
-                                            {/*<div className="newsMenuIntro">*/}
-                                                {/*行业形势变化*/}
-                                                {/*即时信息发布*/}
-                                            {/*</div>*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
-                                {/*</Link>*/}
-                            {/*</li>*/}
-                            {/*<li className="newsMenuLi">*/}
-                                {/*<Link to="/newsList">*/}
-                                    {/*<div className="newMenuImg"><img src={news3} /></div>*/}
-                                    {/*<div className="newsMenuTitleBox">*/}
-                                        {/*<div className="n_M_1"><div className="newsMenuTitle">技术动态</div></div>*/}
-                                        {/*<div className="n_M_2">*/}
-                                            {/*<div className="newsMenuIntro">*/}
-                                                {/*技术迭代更新*/}
-                                                {/*即时信息发布*/}
-                                            {/*</div>*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
-                                {/*</Link>*/}
-                            {/*</li>*/}
                         </ul>
                     </div>
                 </div>

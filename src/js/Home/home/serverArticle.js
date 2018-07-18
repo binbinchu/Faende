@@ -42,7 +42,6 @@ export default class NewsArticle extends React.Component {
             if(nextPropsType == ""){
                 this.loadArticle("promise");
             }else{
-                console.log(nextPropsType)
                 if(nextPropsType != "意见建议"){
                     this.loadArticle(nextPropsType);
                 }
@@ -59,7 +58,6 @@ export default class NewsArticle extends React.Component {
         }else if(type == "服务承诺"){
             type = "promise"
         }
-        console.log(type)
         $.ajax({
             type: "get",
             url: APIURL+"CustomerGetInfo",
@@ -73,8 +71,6 @@ export default class NewsArticle extends React.Component {
                 } else if (type == "afterSale") {
                     data.data.name = "售后服务"
                 } else if (type == "promise") {
-                    data.data.name = "服务承诺"
-                }else if(data.data == undefined){
                     data.data.name = "服务承诺"
                 }
                 _this.setState({

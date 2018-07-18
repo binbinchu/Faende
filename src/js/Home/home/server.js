@@ -57,42 +57,6 @@ class ServerMenu extends React.Component{
                 <div className="serverMenuList">
                     <ul>
                         {ListData}
-                        {/*<li className="serverMenuListLi">*/}
-                            {/*<Link to={{*/}
-                                {/*pathname:"/serverArticle",*/}
-                                {/*query:{*/}
-                                    {/*type:"",*/}
-                                    {/*name:""*/}
-                                {/*},*/}
-                                {/*state:{*/}
-                                    {/*type:"",*/}
-                                    {/*name:""*/}
-                                {/*},*/}
-                            {/*}}>*/}
-                                {/*<div className="serverMenuLiImg"><img src={server1} /></div>*/}
-                                {/*<div className="serverMenuLiIntro">*/}
-                                    {/*请提出您的宝贵意见*/}
-                                {/*</div>*/}
-                            {/*</Link>*/}
-                        {/*</li>*/}
-                        {/*<li className="serverMenuListLi">*/}
-                            {/*<div className="serverMenuLiImg"><img src={server2} /></div>*/}
-                            {/*<div className="serverMenuLiIntro">*/}
-                                {/*我们为您提供完善的售后保障和优质的售后服务*/}
-                            {/*</div>*/}
-                        {/*</li>*/}
-                        {/*<li className="serverMenuListLi">*/}
-                            {/*<div className="serverMenuLiImg"><img src={server3} /></div>*/}
-                            {/*<div className="serverMenuLiIntro">*/}
-                                {/*我们为您提供完善的售后保障和优质的售后服务*/}
-                            {/*</div>*/}
-                        {/*</li>*/}
-                        {/*<li className="serverMenuListLi">*/}
-                            {/*<div className="serverMenuLiImg"><img src={server4} /></div>*/}
-                            {/*<div className="serverMenuLiIntro">*/}
-                                {/*我们为您提供完善的售后保障和优质的售后服务*/}
-                            {/*</div>*/}
-                        {/*</li>*/}
                     </ul>
                 </div>
             </div>

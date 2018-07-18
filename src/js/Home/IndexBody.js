@@ -10,7 +10,8 @@ export default class IndexBody extends React.Component{
         super(props);
         this.state={
             IndexNewsData:[],
-            IndexProductData:[]
+            IndexProductData:[],
+            aboutData:[]
         }
     }
     loadIndexNews(){
@@ -39,9 +40,23 @@ export default class IndexBody extends React.Component{
             }
         })
     }
+    loadAbout(){
+        let _this = this;
+        $.ajax({
+            type:"get",
+            url:APIURL+"getAboutUs",
+            dataType:"JSON",
+            success:function(data){
+                _this.setState({
+                    aboutData: data.data
+                });
+            }
+        })
+    }
     componentDidMount(){
         this.loadIndexNews();
         this.loadIndexProduct();
+        this.loadAbout();
     }
     render(){
         return(
@@ -50,7 +65,7 @@ export default class IndexBody extends React.Component{
                     <Slider/>
                 </div>
                 <div className="indexAbout">
-                    <IndexAbout/>
+                    <IndexAbout aboutData={this.state.aboutData}/>
                 </div>
                 <div className="indexNews">
                     <IndexNews newslist={this.state.IndexNewsData}/>

@@ -6,9 +6,6 @@ import {APIURL,IMG} from '../api'
 export default class ArticleList extends React.Component{
     constructor(props){
         super(props);
-        // console.log(this.props.location.search.split("id=")[1].split('&')[0]);
-        // console.log(this.props.location.query.listId);
-        // console.log(this.props.location.search.split("type=")[1]);
         this.state = {
             listId: this.props.location.search.split("id=")[1].split('&')[0] || this.props.location.state.listId,
             type: this.props.location.search.split("type=")[1] || this.props.location.state.type,
@@ -30,7 +27,6 @@ export default class ArticleList extends React.Component{
     }
     loadRightList(type,listId){
         let _this = this;
-        console.log(listId);
         $.ajax({
             type:"get",
             url:APIURL+"getNewsListByCateId",
@@ -80,33 +76,6 @@ export default class ArticleList extends React.Component{
                 <div className="productArticleList">
                     <ul>
                         {ListData}
-                        {/*<li className="productArticleLi">*/}
-                            {/*<Link to="/">*/}
-                                {/*<div className="productArticleLiImg"><img src={require('../../../images/article/article1(1).png')} /></div>*/}
-                                {/*<div className="productArticleLiCon">*/}
-                                    {/*<div className="productArticleLiTitle">车辆安全监控系统{this.props.match.params.id}</div>*/}
-                                    {/*<div className="productArticleLiIntro"></div>*/}
-                                {/*</div>*/}
-                            {/*</Link>*/}
-                        {/*</li>*/}
-                        {/*<li className="productArticleLi">*/}
-                            {/*<Link to="/">*/}
-                                {/*<div className="productArticleLiImg"><img src={require('../../../images/article/article1(2).png')} /></div>*/}
-                                {/*<div className="productArticleLiCon">*/}
-                                    {/*<div className="productArticleLiTitle">车辆安全监控系统{this.props.match.params.id}</div>*/}
-                                    {/*<div className="productArticleLiIntro">实时记录车辆的运行轨迹、方向速度</div>*/}
-                                {/*</div>*/}
-                            {/*</Link>*/}
-                        {/*</li>*/}
-                        {/*<li className="productArticleLi">*/}
-                            {/*<Link to="/">*/}
-                                {/*<div className="productArticleLiImg"><img src={require('../../../images/article/article1(3).png')} /></div>*/}
-                                {/*<div className="productArticleLiCon">*/}
-                                    {/*<div className="productArticleLiTitle">车辆安全监控系统{this.props.match.params.id}</div>*/}
-                                    {/*<div className="productArticleLiIntro">实时记录车辆的运行轨迹、方向速度</div>*/}
-                                {/*</div>*/}
-                            {/*</Link>*/}
-                        {/*</li>*/}
                     </ul>
                 </div>
             </div>

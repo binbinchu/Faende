@@ -68,9 +68,6 @@ class Slider extends React.Component {
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
                         {ImageData}
-                        {/*<div className="swiper-slide"><img src={Silder} /></div>*/}
-                        {/*<div className="swiper-slide"></div>*/}
-                        {/*<div className="swiper-slide"></div>*/}
                     </div>
                     <div className="swiper-pagination"></div>
                     <div className="swiper-button-next"></div>
@@ -83,14 +80,16 @@ class Slider extends React.Component {
 
 //IndexAbout
 class IndexAbout extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render() {
+        const aboutData = this.props.aboutData;
         return (
             <div className="indexAboutBox indexBox">
                 <div className="aboutTitle">关于我们<span></span></div>
                 <div className="aboutContent">
-                    济南法恩德信息技术有限公司，中国第一家枪支定位设备提供商。公司奉行积淀孕育创新、智慧创造价值”的价值理念，坚持以人为本、凝聚智慧、
-                    激发潜能、提升技能、促进发展的管理理念。 在公司领导的领导下，法恩德已形成简单可依赖的核心文化，深深地植根于法恩德。这是一个充满
-                    朝气、求实坦诚的公司，以科技改变生活，推动人类的文明与进步，促进中国经济的发展为己任，正朝着更为远大的目标而迈进。
+                    {aboutData.text}
                 </div>
                 <div className="aboutBtnBox">
                     <div className="aboutBtn"><Link to={{
@@ -242,6 +241,7 @@ class IndexEntrance extends React.Component {
             url: APIURL + "mainGetConvenient",
             dataType: "JSON",
             success: function (data) {
+                console.log(data)
                 _this.setState({
                     listData: data.data
                 })
@@ -258,7 +258,9 @@ class IndexEntrance extends React.Component {
         let ListData = _listdata.map((item, index) => (
             <li className="indexN_CLi EntranceLi" key={index}>
                 <a href={item.value} target="_blank">
-                    <div className="indexN_CLiImg EntranceLiImg"><i className={item.icon}></i></div>
+                    {/*<i className={item.icon}></i>*/}
+
+                    <div className="indexN_CLiImg EntranceLiImg"><img className="EntranceImg" src={IMG + "Public/Upload/Icon/" + item.file} /></div>
                     <div className="indexEntranceTitle">{item.key}</div>
                 </a>
             </li>
